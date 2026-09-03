@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/median-of-two-sorted-arrays/
 // Synced by: LinkCode
-// Date: 9/3/2026, 11:53:35 PM
+// Date: 9/4/2026, 1:14:55 AM
 // ======================================
 
 
@@ -20,32 +20,27 @@ public:
         int low = 0;
         int high = n1;
 
+        int left = (n1 + n2 + 1) / 2;
+
         while (low <= high) {
 
-            int cut1 = (low + high) / 2;
-            int cut2 = (n1 + n2 + 1) / 2 - cut1;
+            int mid1 = (low + high) / 2;
+            int mid2 = left - mid1;
 
-            int l1, l2, r1, r2;
+            int l1 = INT_MIN, l2 = INT_MIN;
+            int r1 = INT_MAX, r2 = INT_MAX;
 
-            if (cut1 == 0)
-                l1 = INT_MIN;
-            else
-                l1 = nums1[cut1 - 1];
+            if (mid1 < n1)
+                r1 = nums1[mid1];
 
-            if (cut2 == 0)
-                l2 = INT_MIN;
-            else
-                l2 = nums2[cut2 - 1];
+            if (mid2 < n2)
+                r2 = nums2[mid2];
 
-            if (cut1 == n1)
-                r1 = INT_MAX;
-            else
-                r1 = nums1[cut1];
+            if (mid1 - 1 >= 0)
+                l1 = nums1[mid1 - 1];
 
-            if (cut2 == n2)
-                r2 = INT_MAX;
-            else
-                r2 = nums2[cut2];
+            if (mid2 - 1 >= 0)
+                l2 = nums2[mid2 - 1];
 
             if (l1 <= r2 && l2 <= r1) {
 
@@ -56,9 +51,9 @@ public:
             }
 
             if (l1 > r2)
-                high = cut1 - 1;
+                high = mid1 - 1;
             else
-                low = cut1 + 1;
+                low = mid1 + 1;
         }
 
         return 0.0;
