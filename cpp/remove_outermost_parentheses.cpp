@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/remove-outermost-parentheses/
 // Synced by: LinkCode
-// Date: 9/7/2026, 12:02:39 AM
+// Date: 9/7/2026, 12:03:18 AM
 // ======================================
 
 
