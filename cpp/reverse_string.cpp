@@ -3,20 +3,19 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/reverse-string/
 // Synced by: LinkCode
-// Date: 9/9/2026, 12:05:25 AM
+// Date: 9/11/2026, 11:35:50 PM
 // ======================================
 
 
 class Solution {
 public:
     void reverseString(vector<char>& s) {
-        int st = 0; 
-        int end = s.size() - 1;
-        while(st<=end){
-            swap(s[st],s[end]);
-            end--;
-            st++;
+        vector<char> temp;
+
+        for(int i = s.size() - 1; i >= 0; i--) {
+            temp.push_back(s[i]);
         }
-        
+
+        s = temp;
     }
 };
