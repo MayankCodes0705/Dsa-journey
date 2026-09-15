@@ -3,18 +3,22 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/isomorphic-strings/
 // Synced by: LinkCode
-// Date: 9/14/2026, 11:32:48 PM
+// Date: 9/15/2026, 11:41:22 PM
 // ======================================
 
 
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
+        int mp1[256] = {0};
+        int mp2[256] = {0};
+
         for(int i = 0; i < s.size(); i++) {
-            for(int j = i + 1; j < s.size(); j++) {
-                if((s[i] == s[j]) != (t[i] == t[j]))
-                    return false;
-            }
+            if(mp1[s[i]] != mp2[t[i]])
+                return false;
+
+            mp1[s[i]] = i + 1;
+            mp2[t[i]] = i + 1;
         }
 
         return true;
