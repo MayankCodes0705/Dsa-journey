@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/string-to-integer-atoi/
 // Synced by: LinkCode
-// Date: 9/17/2026, 11:11:27 PM
+// Date: 9/17/2026, 11:19:12 PM
 // ======================================
 
 
@@ -25,18 +25,11 @@ public:
             i++;
         }
 
-        string num = "";
-        while(i < n && isdigit(s[i])){
-            num += s[i];
-            i++;
-        }
-
         long long ans = 0;
-        int j = 0;
 
-        while(j < num.length()){
-            ans = ans * 10 + (num[j]-'0');
-            j++;
+        while(i < n && isdigit(s[i])){
+            ans = ans * 10 + (s[i]-'0');
+            i++;
             if(ans * sign > INT_MAX){
                 return INT_MAX;
             }
