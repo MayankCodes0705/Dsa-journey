@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/roman-to-integer/
 // Synced by: LinkCode
-// Date: 9/18/2026, 10:53:44 PM
+// Date: 9/18/2026, 10:54:22 PM
 // ======================================
 
 
@@ -23,7 +23,7 @@ public:
         int ans = 0;
 
         for(int i = 0; i < s.length(); i++) {
-            if(mp[s[i]] < mp[s[i + 1]]) {
+            if(i + 1 < s.length() && mp[s[i]] < mp[s[i + 1]]) {
                 ans -= mp[s[i]];
             }
             else {
