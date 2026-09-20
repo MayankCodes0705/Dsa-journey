@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/delete-node-in-a-linked-list/
 // Synced by: LinkCode
-// Date: 9/19/2026, 11:25:44 PM
+// Date: 9/20/2026, 7:01:35 PM
 // ======================================
 
 
@@ -18,14 +18,7 @@
 class Solution {
 public:
     void deleteNode(ListNode* node) {
-        ListNode* temp = node;
-
-        while (temp->next->next != NULL) {
-            temp->val = temp->next->val;
-            temp = temp->next;
-        }
-
-        temp->val = temp->next->val;
-        temp->next = NULL;
+        node->val = node->next->val;
+        node->next = node->next->next;
     }
 };
