@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/reverse-linked-list/
 // Synced by: LinkCode
-// Date: 9/23/2026, 12:20:25 AM
+// Date: 9/23/2026, 12:59:37 AM
 // ======================================
 
 
@@ -20,18 +20,19 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* temp = head;
-        stack<int>st;
-        while(temp!=NULL){
-            st.push(temp->val);
-            temp = temp->next;
+        ListNode* prev = NULL;
+        ListNode* current = head;
+        ListNode* next;
+
+        while(current != NULL) {
+            next = current->next;
+
+            current->next = prev;
+
+            prev = current;
+            current = next;
         }
-        temp = head;
-        while(temp!= NULL){
-            temp->val = st.top();
-            st.pop();
-            temp = temp->next;
-        }
-        return head;
+
+        return prev;
     }
 };
