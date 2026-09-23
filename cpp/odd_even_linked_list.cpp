@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/odd-even-linked-list/
 // Synced by: LinkCode
-// Date: 9/24/2026, 12:10:15 AM
+// Date: 9/24/2026, 12:10:54 AM
 // ======================================
 
 
@@ -21,34 +21,21 @@ class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
         if(head == NULL || head->next == NULL) return head;
-        ListNode* temp = head;
-        vector<int>arr;
 
-        while(temp!= NULL && temp->next!=NULL){
-            arr.push_back(temp->val);
-            temp = temp->next->next;
-        }
-        if(temp){
-            arr.push_back(temp->val);
-        }
+        ListNode* odd = head;
+        ListNode* evenHead = head->next;
+        ListNode* even = head->next;
 
-        temp = head->next;
-        while(temp!= NULL && temp->next!=NULL){
-            arr.push_back(temp->val);
-            temp = temp->next->next;
-        }
-        if(temp){
-            arr.push_back(temp->val);
+        while(even!= NULL && even->next != NULL){
+            odd->next = odd->next->next;
+            even->next = even->next->next;
+
+            odd = odd -> next;
+            even = even -> next;
+
         }
 
-        int i = 0;
-        temp = head;
-        while(temp!=NULL){
-            temp->val = arr[i];
-            i++;
-            temp = temp->next;
-        }
-        
+        odd->next = evenHead;
         return head;
 
     }
