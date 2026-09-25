@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/
 // Synced by: LinkCode
-// Date: 9/25/2026, 12:07:43 AM
+// Date: 9/25/2026, 11:43:25 PM
 // ======================================
 
 
@@ -23,23 +23,16 @@ public:
         if (head == NULL || head->next == NULL) {
             return NULL;
         }
-        ListNode* temp = head;
-        int curr = 0;
-
-        while(temp != NULL){
-            curr++;
-            temp = temp->next;
-        }
-        
-        int mid = curr/2;
-        temp = head;
+        ListNode* slow = head;
+        ListNode* fast = head;
         ListNode* prev = NULL;
-        while(mid--){
-            prev = temp;
-            temp = temp->next;
-        }
 
-        prev->next = temp->next;
+        while(fast!= NULL && fast->next != NULL){
+            prev = slow;
+            slow = slow -> next;
+            fast = fast-> next -> next;
+        }
+        prev->next = slow->next;
         return head;
     }
 };
