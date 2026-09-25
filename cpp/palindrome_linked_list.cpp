@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/palindrome-linked-list/
 // Synced by: LinkCode
-// Date: 9/26/2026, 12:11:45 AM
+// Date: 9/26/2026, 12:20:10 AM
 // ======================================
 
 
@@ -18,22 +18,46 @@
  * };
  */
 class Solution {
+private:
+    ListNode* reverse(ListNode* head) {
+
+    ListNode* prev = NULL;
+    ListNode* current = head;
+
+    while(current != NULL) {
+
+        ListNode* next = current->next;
+
+        current->next = prev;
+
+        prev = current;
+        current = next;
+    }
+
+    return prev;
+}
 public:
     bool isPalindrome(ListNode* head) {
-        ListNode* temp = head;
-        stack<int>st;
-        while(temp!= NULL){
-            st.push(temp->val);
-            temp = temp->next;
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while(fast->next!= NULL && fast->next->next!=NULL){
+            slow = slow -> next;
+            fast = fast-> next -> next;
         }
 
-        temp = head;
-        while(temp!=NULL){
-            if(temp->val != st.top()) return false;
-            st.pop();
-            temp = temp->next;
-            
+        ListNode* newHead = reverse(slow->next);
+        ListNode* first = head;
+        ListNode* second = newHead;
+
+        while(second!= NULL){
+            if(first -> val != second->val){
+                reverse(newHead);
+                return false;
+            }
+            first = first->next;
+            second = second->next; 
         }
+        reverse(newHead);
         return true;
     }
 };
