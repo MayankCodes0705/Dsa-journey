@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/linked-list-cycle/
 // Synced by: LinkCode
-// Date: 9/26/2026, 1:50:29 AM
+// Date: 9/26/2026, 2:11:10 AM
 // ======================================
 
 
@@ -18,16 +18,15 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        ListNode* temp = head;
-        unordered_set<ListNode*> st;
+        ListNode* slow = head;
+        ListNode* fast = head;
 
-        while(temp != NULL) {
-            if(st.find(temp) != st.end())
-                return true;
-
-            st.insert(temp);
-            temp = temp->next;
+        while(fast!=NULL && fast->next != NULL){
+            slow = slow -> next;
+            fast = fast -> next -> next;
+            if(slow == fast) return true;
         }
+        
 
         return false;
     }
