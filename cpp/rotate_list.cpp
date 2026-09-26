@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/rotate-list/
 // Synced by: LinkCode
-// Date: 9/27/2026, 12:13:15 AM
+// Date: 9/27/2026, 12:13:54 AM
 // ======================================
 
 
