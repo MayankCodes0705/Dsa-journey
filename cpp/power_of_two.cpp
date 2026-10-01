@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/power-of-two/
 // Synced by: LinkCode
-// Date: 10/1/2026, 12:27:47 AM
+// Date: 10/1/2026, 11:15:12 PM
 // ======================================
 
 
