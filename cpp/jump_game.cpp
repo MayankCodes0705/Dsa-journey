@@ -3,31 +3,22 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/jump-game/
 // Synced by: LinkCode
-// Date: 10/6/2026, 1:30:41 AM
+// Date: 10/7/2026, 12:37:26 AM
 // ======================================
 
 
 
 class Solution {
 public:
-    bool canJump(std::vector<int>& nums) {
-        int max_reach = 0;
-        int n = nums.size();
+    bool canJump(vector<int>& nums) {
+        int goal = nums.size() - 1;
 
-        for (int i = 0; i < n; ++i) {
-            // If current index is beyond the furthest reachable point
-            if (i > max_reach) {
-                return false;
-            }
-            
-            max_reach = max(max_reach, i + nums[i]);
-            
-            // Early exit if the target is already reachable
-            if (max_reach >= n - 1) {
-                return true;
+        for (int i = goal - 1; i >= 0; --i) {
+            if (i + nums[i] >= goal) {
+                goal = i;
             }
         }
 
-        return true;
+        return goal == 0;
     }
 };
