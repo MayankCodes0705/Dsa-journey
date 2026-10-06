@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/jump-game/
 // Synced by: LinkCode
-// Date: 10/7/2026, 12:37:26 AM
+// Date: 10/7/2026, 12:38:30 AM
 // ======================================
 
 
@@ -20,5 +20,6 @@ public:
         }
 
         return goal == 0;
+
     }
 };
