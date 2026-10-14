@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/max-consecutive-ones-iii/
 // Synced by: LinkCode
-// Date: 10/14/2026, 8:07:25 PM
+// Date: 10/14/2026, 8:07:40 PM
 // ======================================
 
 
@@ -17,7 +17,7 @@ public:
         int zeroes = 0;
         while(r<n){
             if(nums[r] == 0) zeroes++;
-            if(zeroes > k){
+            while(zeroes > k){
                 if(nums[l]==0)zeroes--;
                 l++;
             }
