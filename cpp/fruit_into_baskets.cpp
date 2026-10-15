@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/fruit-into-baskets/
 // Synced by: LinkCode
-// Date: 10/14/2026, 9:06:23 PM
+// Date: 10/15/2026, 6:18:39 PM
 // ======================================
 
 
@@ -27,7 +27,7 @@ public:
                 l++;
             }
 
-            if(mp.size()<=2){
+            else{
                 maxLen = max(maxLen,r-l+1);
             }    
             r++;
