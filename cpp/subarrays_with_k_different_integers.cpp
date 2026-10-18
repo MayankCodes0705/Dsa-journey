@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/subarrays-with-k-different-integers/
 // Synced by: LinkCode
-// Date: 10/17/2026, 8:05:27 PM
+// Date: 10/18/2026, 2:00:14 PM
 // ======================================
 
 
@@ -29,9 +29,7 @@ public:
     }
 
     int subarraysWithKDistinct(vector<int>& nums, int k) {
-        int ans = subarrayWithKDistinct(nums,k) - subarrayWithKDistinct(nums,k-1);
-
-        return ans;
+        return subarrayWithKDistinct(nums,k) - subarrayWithKDistinct(nums,k-1);
     }    
 
 };
