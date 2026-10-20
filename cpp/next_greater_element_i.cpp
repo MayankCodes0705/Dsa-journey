@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/next-greater-element-i/
 // Synced by: LinkCode
-// Date: 10/20/2026, 8:16:49 PM
+// Date: 10/20/2026, 8:17:36 PM
 // ======================================
 
 
