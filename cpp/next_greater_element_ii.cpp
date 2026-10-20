@@ -1,3 +1,4 @@
+//Approach : MONOTONIC stack
 // ======================================
 // LeetCode Problem: next greater element ii
 // Language: cpp
