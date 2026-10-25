@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/trapping-rain-water/
 // Synced by: LinkCode
-// Date: 10/23/2026, 8:47:26 PM
+// Date: 10/25/2026, 10:50:26 PM
 // ======================================
 
 
