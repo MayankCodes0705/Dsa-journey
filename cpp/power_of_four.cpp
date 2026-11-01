@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/power-of-four/
 // Synced by: LinkCode
-// Date: 10/28/2026, 8:25:38 PM
+// Date: 11/2/2026, 1:41:14 AM
 // ======================================
 
 
