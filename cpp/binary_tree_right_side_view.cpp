@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/binary-tree-right-side-view/
 // Synced by: LinkCode
-// Date: 11/6/2026, 11:38:25 PM
+// Date: 11/6/2026, 11:39:07 PM
 // ======================================
 
 
@@ -37,7 +37,6 @@ public:
         vector<int> ans;
 
         solve(root, 0, ans);
-
         return ans;
     }
 };
