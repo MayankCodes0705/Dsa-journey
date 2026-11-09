@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
 // Synced by: LinkCode
-// Date: 11/9/2026, 8:35:23 PM
+// Date: 11/9/2026, 8:58:27 PM
 // ======================================
 
 
@@ -20,32 +20,44 @@
  */
 class Solution {
 public:
-    TreeNode* solve(vector<int>& inorder, vector<int>& postorder, int start, int end, int &idx) {
+    TreeNode* solve(vector<int>& inorder, vector<int>& postorder,int inStart, int inEnd, int postStart, int postEnd) {
 
-        if(start > end) return NULL;
+        if(inStart > inEnd) {
+            return NULL;
+        }
 
-        int rootVal = postorder[idx];
-        int i = start;
+        TreeNode* root = new TreeNode(postorder[postEnd]);
 
-        for(; i <= end; i++) {
-            if(inorder[i] == rootVal) {
+        int i = inStart;
+
+        for(; i <= inEnd; i++) {
+            if(inorder[i] == root->val) {
                 break;
             }
         }
 
-        idx--;
+        int leftSize = i - inStart;
+        int rightSize = inEnd - i;
 
-        TreeNode* root = new TreeNode(rootVal);
-        root->right = solve(inorder, postorder, i + 1, end, idx);
-        root->left = solve(inorder, postorder, start, i - 1, idx);
+        // Left subtree
+        root->left = solve(inorder, postorder,inStart, i - 1,postStart, postStart + leftSize - 1);
+
+        // Right subtree
+        root->right = solve(inorder, postorder,i + 1, inEnd, postEnd - rightSize, postEnd - 1);
 
         return root;
     }
 
     TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
-        int idx = postorder.size() - 1;
+
         int n = inorder.size();
 
-        return solve(inorder, postorder, 0, n - 1, idx);
+        int inStart = 0;
+        int inEnd = n - 1;
+
+        int postStart = 0;
+        int postEnd = n - 1;
+
+        return solve(inorder, postorder,inStart, inEnd, postStart, postEnd);
     }
 };
