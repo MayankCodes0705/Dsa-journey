@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/flood-fill/
 // Synced by: LinkCode
-// Date: 11/21/2026, 7:32:59 PM
+// Date: 11/21/2026, 7:33:28 PM
 // ======================================
 
 
@@ -11,7 +11,7 @@
 class Solution {
 private:
     void dfs(int row, int col, vector<vector<int>>&ans,
-             vector<vector<int>> image, int newColor, int delRow[],
+             vector<vector<int>>& image, int newColor, int delRow[],
              int delCol[], int iniColor) {
 
         ans[row][col] = newColor;
