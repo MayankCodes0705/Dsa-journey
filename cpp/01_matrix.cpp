@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/01-matrix/
 // Synced by: LinkCode
-// Date: 11/22/2026, 7:13:33 PM
+// Date: 11/22/2026, 7:17:59 PM
 // ======================================
 
 
@@ -24,7 +24,7 @@ public:
             for(int j = 0; j < m; j++) {
                 if(mat[i][j] == 0) {
                     q.push({{i, j}, 0});
-                    vis[i][j] = 3;
+                    vis[i][j] = 1;
                 }
             }
         }
