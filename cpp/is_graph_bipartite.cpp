@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/is-graph-bipartite/
 // Synced by: LinkCode
-// Date: 11/23/2026, 7:51:31 PM
+// Date: 11/23/2026, 7:51:44 PM
 // ======================================
 
 
@@ -23,7 +23,7 @@ public:
                 queue<int> q;
 
                 q.push(i);
-                color[i] = -1;
+                color[i] = 0;
 
                 while(!q.empty()) {
 
