@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/course-schedule/
 // Synced by: LinkCode
-// Date: 11/24/2026, 7:20:58 PM
+// Date: 11/26/2026, 6:58:31 PM
 // ======================================
 
 
@@ -20,7 +20,7 @@ public:
             adj[it[1]].push_back(it[0]);
         }
 
-        // Calculate indegree of every node
+        // Calculate indegree
         vector<int> indegree(V, 0);
 
         for(int i = 0; i < V; i++) {
@@ -31,14 +31,14 @@ public:
 
         queue<int> q;
 
-        // Push all nodes having indegree 0
+        // Push nodes with indegree 0
         for(int i = 0; i < V; i++) {
             if(indegree[i] == 0) {
                 q.push(i);
             }
         }
 
-        int count = 0;
+        vector<int> topo;
 
         // Apply BFS
         while(!q.empty()) {
@@ -46,7 +46,7 @@ public:
             int node = q.front();
             q.pop();
 
-            count++;
+            topo.push_back(node);
 
             for(auto it : adj[node]) {
 
@@ -58,7 +58,6 @@ public:
             }
         }
 
-        // If all courses are completed, return true
-        return count == V;
+        return topo.size() == V;
     }
 };
