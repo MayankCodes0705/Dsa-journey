@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 // Synced by: LinkCode
-// Date: 11/27/2026, 7:14:03 PM
+// Date: 11/27/2026, 7:14:12 PM
 // ======================================
 
 
